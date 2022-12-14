@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root{
+  --blue: #9accff;
+  --grey: #eaeaea
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 50px;
+  height: 550px;
+}
+
+.calendar, .brigade, .tasks{
+  max-height: 100%;
+  flex: 1 1;
+}
+
+.brigade{
+  overflow-x: scroll;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.calendar__days-item {
+  padding: 20px;
+  width: 70px;
+    font-weight: 700;
+  text-align: center;
+}
+
+.dates-row__item{
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dates-row__item.disabled{
+  opacity: .5;
+  cursor: default;
+}
+
+.dates-row__item-block {
+  padding: 10px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  color: #000;
+  transition: .2s;
+  justify-content: center;
+}
+
+.dates-row__item:hover .dates-row__item-block{
+  color: #fff;
+  background-color: var(--blue);
+}
+
+.dates-row__item.disabled:hover .dates-row__item-block{
+  color: #000;
+  background: #fff;
+}
+
+.dates-row__item-count{
+  position: absolute;
+  top: -8px;
+  right: 20%;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  background: var(--grey);
+}
+
+.dates-row__item-count img{
+  width: 17px;
+  height: 17px;
+}
+
+.dates-row__item-count span{
+  position: absolute;
+  top:-5px;
+  right: -1px;
+  font-weight: 700;
+
+}
+
+.dates-row__item-brigades{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 19px;
+  left: -9px;
+}
+
+.dates-row__item-brigades__item{
+  width: 20px;
+  position: relative;
+  height: 20px;
+  margin: 2px 0;
+}
+
+.dates-row__item-brigades__item img{
+  width: 16px;
+  height: 16px;
+}
+.dates-row__item-brigades__item span{
+  position: absolute;
+  font-size: 14px;
+  font-weight: 700;
+  top:-9px;
+  right: -4px;
+}
+
+/*
+Бригады
+*/
+.brigade {
+  text-align: center;
+  margin: 0 20px;
+  min-width: 350px;
+  padding: 20px;
+}
+
+.brigade::-webkit-scrollbar {
+  width: 3px;
+  height: 0;
+  background-color: #ccc;
+}
+.brigade::-webkit-scrollbar-thumb {
+  background-color: #9f9f9f;
+}
+.brigade-list__item{
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  align-items: center;
+}
+
+.brigade-head{
+  cursor: pointer;
+  transition: .3s;
+}
+
+.brigade-head:hover{
+  background: #e8e8e8;
+}
+
+.brigade-head__icon{
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  margin-right: 20px;
+}
+
+.brigade-head__task{
+  margin-left: auto;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.brigade-list__item-img{
+  width: 40px;
+  margin-right: 20px;
+}
+
+/**
+  Заявки
+ */
+.tasks{
+  margin: 20px;
+}
+.tasks h2 {
+  text-align: center;
+}
+.tasks__header{
+  align-items: center;
+}
+
+.tasks__header-icon {
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  margin-right: 20px;
+}
+
+.tasks__list-item{
+  padding: 20px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.calendar__change{
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar__change-month{
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.calendar__change-arrow img {
+  height: 44px;
+  cursor: pointer;
+}
+
+.calendar__change-arrow.disabled{
+  opacity: .5;
+}
+
+.calendar__change-arrow.right{
+  transform: rotate(180deg);
+}
